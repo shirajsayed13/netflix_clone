@@ -6,6 +6,7 @@ import Link from '@mui/material/Link';
 
 import Sidebar from '../Sidebar/Sidebar';
 import useStyles from './styles';
+import Search from '../Search/Search';
 
 const NavBar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -36,7 +37,7 @@ const NavBar = () => {
           >
             {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
-          {!isMobile && 'Search...'}
+          {!isMobile && <Search />}
           <div>
             {!isAuthenticated ? (
               <Button
@@ -62,7 +63,7 @@ const NavBar = () => {
               </Button>
             )}
           </div>
-          {isMobile && 'Search...'}
+          {isMobile && <Search />}
         </Toolbar>
       </AppBar>
       <div>
